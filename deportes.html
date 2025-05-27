@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strivo - Tienda Deportiva</title>
+    <link href="index.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Corrección: Añadir data-bs-theme="dark" al navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <!-- Corrección: Ajustar ruta de la imagen del logo -->
+                    <img src="/Pagina/images/Strivo logo.png" alt="Strivo Logo" class="d-inline-block align-text-top">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Novedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./deportes.html">Deporte</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./hombres.html">Hombres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./mujeres.html">Mujer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./niños.html">Niños</a>
+                        </li>
+
+                    </ul>
+                    
+                    <form class="d-flex me-2">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="text-white me-3">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div class="cart-icon-container">
+                                <a href="#" class="text-white" id="cartIcon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="badge-cart" id="cartCount">0</span>
+                                </a>
+                                <div class="cart-dropdown-content" id="cartDropdown">
+                                    <h6>Tu Carrito</h6>
+                                    <div id="cartItems">
+                                        <p class="text-muted">Tu carrito está vacío</p>
+                                    </div>
+                                    <div class="cart-total" id="cartTotal">
+                                        Total: $0 COP
+                                    </div>
+                                    <div class="cart-actions">
+                                        <button class="btn btn-sm btn-outline-secondary" id="viewCart">Ver Carrito</button>
+                                        <button class="btn btn-sm btn-danger" id="checkout">Pagar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="banner">
+            <video autoplay muted loop class="banner-video">
+                <source src="/Pagina/images/httpswwwyoutubecomwatchvavs2ymnmtc.mp4" type="video/mp4">
+                <source src="/Pagina/images/httpswwwyoutubecomwatchvavs2ymnmtc.mp4" type="video/webm">
+                Tu navegador no soporta videos HTML5.
+            </video>
+            <div class="banner-overlay">
+                <div class="banner-content">
+                    <h1>STRIVO - CALZADO DEPORTE</h1>
+                    <p class="lead">Rendimiento y estilo para cada paso</p>
+                    <a href="#catalog" class="btn btn-light btn-lg">Comprar ahora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Categorías Destacadas</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="category-card">
+                            <img src="/Pagina/images deportes/Adidas deporti li Fxg Guayos.webp" alt="Zapatillas para correr" class="category-img">
+                            <div class="category-overlay">
+                                <p class="m-0">Adidas deporti li Fxg Guayos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="category-card">
+                            <img src="/Pagina/images deportes/Tenis Basketball Flight.webp" alt="Zapatillas para gimnasio" class="category-img">
+                            <div class="category-overlay">
+                                <p class="m-0">Tenis Basketball Flight</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="category-card">
+                            <img src="/Pagina/images deportes/Tenis Merrell Skyquest Trek.webp" alt="Zapatillas para fútbol" class="category-img">
+                            <div class="category-overlay">
+                                <p class="m-0">Tenis Merrell Skyquest Trek</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="catalog" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Catálogo de Zapatillas</h2>
+                
+                <div class="row">
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal1">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Guayos Multiterreno.webp" class="card-img-top product-img" alt="Zapatilla 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Guayos Multiterreno</h5>
+                                <p class="card-text">$329.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal2">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Guayos para cancha sintetica.webp" class="card-img-top product-img" alt="Zapatilla 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Guayos para cancha sintetica</h5>
+                                <p class="card-text">$289.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal3">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Guayos Predator Accuracy.webp" class="card-img-top product-img" alt="Zapatilla 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Guayos Predator Accuracy</h5>
+                                <p class="card-text">$399.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal4">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Guayos Nike Phantom.webp" class="card-img-top product-img" alt="Zapatilla 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Guayos Nike Phantom</h5>
+                                <p class="card-text">$259.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal5">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Tenis Basketball UA GS.webp" class="card-img-top product-img" alt="Zapatilla 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Tenis Basketball UA GS</h5>
+                                <p class="card-text">$278.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal6">
+                        <div class="card product-card">
+                            <img src="/Pagina/images/Zapatilla basket pro.avif" class="card-img-top product-img" alt="Zapatilla 6">
+                            <div class="card-body">
+                                <h5 class="card-title">Zapatilla Basket Pro</h5>
+                                <p class="card-text">$349.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal7">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Tenis Basketball Lebron Witness.webp" class="card-img-top product-img" alt="Zapatilla 7">
+                            <div class="card-body">
+                                <h5 class="card-title">Tenis Basketball Lebron Witness</h5>
+                                <p class="card-text">$219.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal8">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Tenis Basketball GT.webp" class="card-img-top product-img" alt="Zapatilla 8">
+                            <div class="card-body">
+                                <h5 class="card-title">Tenis Basketball GT</h5>
+                                <p class="card-text">$429.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal9">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Tenis Court Slide.webp" class="card-img-top product-img" alt="Zapatilla 9">
+                            <div class="card-body">
+                                <h5 class="card-title">Tenis Court Slide</h5>
+                                <p class="card-text">$269.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal10">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Zapatilla Adidas PLRPATH.webp" class="card-img-top product-img" alt="Zapatilla 10">
+                            <div class="card-body">
+                                <h5 class="card-title">Zapatilla Adidas PLRPATH</h5>
+                                <p class="card-text">$299.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal11">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Zapatilla Under Armour Surge.webp" class="card-img-top product-img" alt="Zapatilla 11">
+                            <div class="card-body">
+                                <h5 class="card-title">Zapatilla Under Armour Surge/h5>
+                                <p class="card-text">$189.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#productModal12">
+                        <div class="card product-card">
+                            <img src="/Pagina/images deportes/Tenis Skechers Ultimate Classic.webp" class="card-img-top product-img" alt="Zapatilla 12">
+                            <div class="card-body">
+                                <h5 class="card-title">Tenis Skechers Ultimate Classic</h5>
+                                <p class="card-text">$459.000 COP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="subscription-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2>Suscríbete a nuestra newsletter</h2>
+                        <p>Recibe noticias sobre nuevos productos, ofertas exclusivas y contenido especial directamente en tu correo.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="row g-3">
+                            <div class="col-md-8">
+                                <input type="email" class="form-control" id="emailSubscription" placeholder="Tu correo electrónico">
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-danger w-100">Suscribirme</button>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="privacyCheck">
+                                    <label class="form-check-label" for="privacyCheck">
+                                        Acepto la política de privacidad y recibir comunicaciones comerciales
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Strivo</h5>
+                    <p>Tu tienda de calzado deportivo de confianza. Calidad, rendimiento y estilo para todos los deportistas.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Sobre nosotros</a></li>
+                        <li><a href="#" class="text-white">Términos y condiciones</a></li>
+                        <li><a href="#" class="text-white">Política de privacidad</a></li>
+                        <li><a href="#" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 Strivo Official Store. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modales para detalles de productos -->
+    <!-- Solo incluyo 2 modales como ejemplo, deberías incluir los 12 -->
+    <div class="modal fade" id="productModal1" tabindex="-1" aria-labelledby="productModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModal1Label">Guayos Multiterreno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/Pagina/images deportes/Guayos Multiterreno.webp" class="img-fluid modal-product-img" alt="Zapatilla Running Pro">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Guayos Multiterreno</h4>
+                            <h5 class="text-danger">$329.000 COP</h5>
+                            <p class="mt-3">Calzado deportivo diseñado para ofrecer versatilidad y rendimiento en diversas superficies de juego, como césped natural seco, césped sintético y terrenos duros. Estos guayos cuentan con una suela equipada con taches moldeados que proporcionan un agarre óptimo, permitiendo movimientos rápidos y cambios de dirección con estabilidad.</p>
+                             
+                            <div class="mb-3">
+                                <label for="productSize" class="form-label">Talla</label>
+                                <select class="form-select" id="productSize">
+                                    <option selected>Selecciona tu talla</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="productQuantity" class="form-label">Cantidad</label>
+                                <input type="number" class="form-control" id="productQuantity" min="1" value="1">
+                            </div>
+                            
+                            <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="productModal2" tabindex="-1" aria-labelledby="productModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModal2Label">Guayos para cancha sintetica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/Pagina/images deportes/Guayos para cancha sintetica.webp" class="img-fluid modal-product-img" alt="Zapatilla Cross Training">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Guayos para cancha sintetica</h4>
+                            <h5 class="text-danger">$289.000 COP</h5>
+                            <p class="mt-3">Diseñados específicamente para ofrecer tracción, comodidad y control en superficies artificiales como césped sintético o pasto artificial. Su suela cuenta con múltiples tacos cortos y distribuidos uniformemente, lo que proporciona un agarre óptimo sin dañar la superficie del campo.</p>
+                            
+                            <div class="mb-3">
+                                <label for="productSize2" class="form-label">Talla</label>
+                                <select class="form-select" id="productSize2">
+                                    <option selected>Selecciona tu talla</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="productQuantity2" class="form-label">Cantidad</label>
+                                <input type="number" class="form-control" id="productQuantity2" min="1" value="1">
+                            </div>
+                            
+                            <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="modal fade" id="productModal3" tabindex="-1" aria-labelledby="productModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal3Label">Guayos Predator Accuracy</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Guayos Predator Accuracy.webp" class="img-fluid modal-product-img" alt="Zapatilla Trail Ultra">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Guayos Predator Accuracy</h4>
+                                <h5 class="text-danger">$399.000 COP</h5>
+                                <p class="mt-3">Diseñados para ofrecer un control preciso del balón y un ajuste cómodo, ideales para jugadores que buscan dominar el partido con confianza.</p>
+                                <div class="mb-3">
+                                    <label for="productSize3" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize3">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity3" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity3" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 4 -->
+        <div class="modal fade" id="productModal4" tabindex="-1" aria-labelledby="productModal4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal4Label">Guayos Nike Phantom</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Guayos Nike Phantom.webp" class="img-fluid modal-product-img" alt="Zapatilla Tenis Court">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Guayos Nike Phantom</h4>
+                                <h5 class="text-danger">$259.000 COP</h5>
+                                <p class="mt-3"> diseñados para jugadores que buscan precisión, control y velocidad en el campo. Con una evolución constante, la línea Phantom ha incorporado tecnologías avanzadas para mejorar el rendimiento en diferentes tipos de terreno</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize4" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize4">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity4" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity4" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 5 -->
+        <div class="modal fade" id="productModal5" tabindex="-1" aria-labelledby="productModal5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal5Label">Tenis Basketball UA GS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Tenis Basketball UA GS.webp" class="img-fluid modal-product-img" alt="Zapatilla Fútbol 5">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Tenis Basketball UA GS</h4>
+                                <h5 class="text-danger">$278.000 COP</h5>
+                                <p class="mt-3">Diseñados para ofrecer soporte, comodidad y rendimiento en la cancha. Ideales para jóvenes jugadores que buscan mejorar su juego con un calzado confiable y de calidad</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize5" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize5">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity5" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity5" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 6 -->
+        <div class="modal fade" id="productModal6" tabindex="-1" aria-labelledby="productModal6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal6Label">Zapatilla Basket Pro</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images/Zapatilla basket pro.avif" class="img-fluid modal-product-img" alt="Zapatilla Basket Pro">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Zapatilla Basket Pro</h4>
+                                <h5 class="text-danger">$349.000 COP</h5>
+                                <p class="mt-3">Alto rendimiento en cancha con amortiguación reactiva y soporte para saltos. Diseño moderno con materiales transpirables.</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize6" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize6">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity6" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity6" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 7 -->
+        <div class="modal fade" id="productModal7" tabindex="-1" aria-labelledby="productModal7Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal7Label">Tenis Basketball Lebron Witness</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Tenis Basketball Lebron Witness.webp" class="img-fluid modal-product-img" alt="Zapatilla Street Style">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Tenis Basketball Lebron Witness</h4>
+                                <h5 class="text-danger">$219.000 COP</h5>
+                                <p class="mt-3"> diseñado para jugadores que buscan una combinación de soporte, amortiguación y tracción a un precio accesible. Inspirado en el estilo de juego explosivo de LeBron James, este modelo ofrece un rendimiento confiable tanto en cancha interior como exterior.</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize7" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize7">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity7" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity7" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 8 -->
+        <div class="modal fade" id="productModal8" tabindex="-1" aria-labelledby="productModal8Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal8Label">Tenis Basketball GT</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Tenis Basketball GT.webp" class="img-fluid modal-product-img" alt="Zapatilla Hiking Tech">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Tenis Basketball GT</h4>
+                                <h5 class="text-danger">$429.000 COP</h5>
+                                <p class="mt-3">diseñado para jugadores ágiles que buscan velocidad, tracción y control a un precio accesible. Forma parte de la línea G.T. (Greatness Takes Time), enfocada en ofrecer alto rendimiento sin comprometer el presupuesto.</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize8" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize8">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity8" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity8" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 9 -->
+        <div class="modal fade" id="productModal9" tabindex="-1" aria-labelledby="productModal9Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal9Label">Tenis Court Slide</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Tenis Court Slide.webp" class="img-fluid modal-product-img" alt="Zapatilla Gym Trainer">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Tenis Court Slide</h4>
+                                <h5 class="text-danger">$269.000 COP</h5>
+                                <p class="mt-3">Tenis versátil y asequible, diseñado para jugadores que buscan comodidad, estabilidad y durabilidad en diversas superficies de juego</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize9" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize9">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity9" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity9" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 10 -->
+        <div class="modal fade" id="productModal10" tabindex="-1" aria-labelledby="productModal10Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal10Label">Zapatilla Adidas PLRPATH</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Zapatilla Adidas PLRPATH.webp" class="img-fluid modal-product-img" alt="Zapatilla Volleyball Pro">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Zapatilla Adidas PLRPATH</h4>
+                                <h5 class="text-danger">$299.000 COP</h5>
+                                <p class="mt-3">zapatilla urbana diseñada para ofrecer comodidad y estilo en el día a día. Ideal para quienes buscan un calzado versátil para actividades casuales y desplazamientos urbanos.</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize10" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize10">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity10" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity10" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 11 -->
+        <div class="modal fade" id="productModal11" tabindex="-1" aria-labelledby="productModal11Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal11Label">Zapatilla Under Armour Surge</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Zapatilla Under Armour Surge.webp" class="img-fluid modal-product-img" alt="Zapatilla Casual Sport">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Zapatilla Under Armour Surge</h4>
+                                <h5 class="text-danger">$189.000 COP</h5>
+                                <p class="mt-3">zapatilla de running diseñada para ofrecer comodidad, ligereza y soporte en entrenamientos diarios y actividades deportivas. Ideal para corredores que buscan un calzado versátil y accesible.</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize11" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize11">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity11" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity11" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 12 -->
+        <div class="modal fade" id="productModal12" tabindex="-1" aria-labelledby="productModal12Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModal12Label">Tenis Skechers Ultimate Classic</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/Pagina/images deportes/Tenis Skechers Ultimate Classic.webp" class="img-fluid modal-product-img" alt="Zapatilla Performance X">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Tenis Skechers Ultimate Classic</h4>
+                                <h5 class="text-danger">$459.000 COP</h5>
+                                <p class="mt-3">Zapatilla de estilo retro diseñada para ofrecer comodidad y estilo en el día a día.</p>
+                                
+                                <div class="mb-3">
+                                    <label for="productSize12" class="form-label">Talla</label>
+                                    <select class="form-select" id="productSize12">
+                                        <option selected>Selecciona tu talla</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="productQuantity12" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="productQuantity12" min="1" value="1">
+                                </div>
+                                
+                                <button class="btn btn-danger w-100 mt-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

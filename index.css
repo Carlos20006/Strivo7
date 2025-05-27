@@ -1,0 +1,218 @@
+/* Colores corporativos */
+:root {
+    --strivo-red: #ff5a5f;
+    --strivo-dark: #333;
+    --strivo-light: #f8f9fa;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo del navbar */
+.navbar {
+    background-color: var(--strivo-red) !important;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Estilo del banner */
+.banner {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content {
+    color: white;
+    text-align: center;
+}
+
+/* Estilo para el video del banner */
+.banner-video {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 300px;
+    height: 300px;
+    transform: translateX(-50%) translateY(-15%);
+    z-index: 0;
+    object-fit: cover;
+}
+
+/* Estilos para las categorías destacadas */
+.category-card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    height: 250px;
+}
+
+.category-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Estilos para el catálogo de productos */
+.product-card {
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Estilos para el modal de producto */
+.modal-product-img {
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* Estilos para el formulario de suscripción */
+.subscription-section {
+    background-color: var(--strivo-light);
+    padding: 40px 0;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: var(--strivo-red);
+    color: white;
+    padding: 30px 0;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+/* Estilos para el carrito de compras */
+.cart-dropdown {
+    position: relative;
+}
+
+.cart-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 5px;
+    padding: 15px;
+    color: var(--strivo-dark);
+}
+
+.cart-dropdown:hover .cart-dropdown-content {
+    display: block;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-total {
+    font-weight: bold;
+    text-align: right;
+    padding: 10px 0;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.badge-cart {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: white;
+    color: var(--strivo-red);
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 10px;
+}
+
+.cart-icon-container {
+    position: relative;
+}
+
+/* Estilos para el toast de notificación */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1100;
+}
